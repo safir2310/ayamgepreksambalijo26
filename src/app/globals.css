@@ -1,0 +1,284 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  /* Orange color scheme - Bright and warm */
+  --background: oklch(0.98 0.05 55);
+  --foreground: oklch(0.15 0.05 55);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.05 55);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.05 55);
+  --primary: oklch(0.65 0.18 55);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.85 0.08 55);
+  --secondary-foreground: oklch(0.15 0.05 55);
+  --muted: oklch(0.95 0.02 55);
+  --muted-foreground: oklch(0.50 0.03 55);
+  --accent: oklch(0.75 0.15 55);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.90 0.04 55);
+  --input: oklch(0.90 0.04 55);
+  --ring: oklch(0.65 0.18 55);
+  --chart-1: oklch(0.65 0.18 55);
+  --chart-2: oklch(0.75 0.15 50);
+  --chart-3: oklch(0.55 0.20 60);
+  --chart-4: oklch(0.70 0.16 45);
+  --chart-5: oklch(0.60 0.19 70);
+  --sidebar: oklch(0.98 0.05 55);
+  --sidebar-foreground: oklch(0.15 0.05 55);
+  --sidebar-primary: oklch(0.65 0.18 55);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.85 0.08 55);
+  --sidebar-accent-foreground: oklch(0.15 0.05 55);
+  --sidebar-border: oklch(0.90 0.04 55);
+  --sidebar-ring: oklch(0.65 0.18 55);
+}
+
+.dark {
+  --background: oklch(0.20 0.05 55);
+  --foreground: oklch(0.95 0.02 55);
+  --card: oklch(0.25 0.06 55);
+  --card-foreground: oklch(0.95 0.02 55);
+  --popover: oklch(0.25 0.06 55);
+  --popover-foreground: oklch(0.95 0.02 55);
+  --primary: oklch(0.65 0.18 55);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.35 0.08 55);
+  --secondary-foreground: oklch(0.95 0.02 55);
+  --muted: oklch(0.30 0.05 55);
+  --muted-foreground: oklch(0.65 0.04 55);
+  --accent: oklch(0.55 0.15 55);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.65 0.18 55);
+  --chart-1: oklch(0.65 0.18 55);
+  --chart-2: oklch(0.75 0.15 50);
+  --chart-3: oklch(0.55 0.20 60);
+  --chart-4: oklch(0.70 0.16 45);
+  --chart-5: oklch(0.60 0.19 70);
+  --sidebar: oklch(0.25 0.06 55);
+  --sidebar-foreground: oklch(0.95 0.02 55);
+  --sidebar-primary: oklch(0.65 0.18 55);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.35 0.08 55);
+  --sidebar-accent-foreground: oklch(0.95 0.02 55);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.65 0.18 55);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations for the app */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.8s ease-out;
+}
+
+.animate-blink {
+  animation: blink 1s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Custom scrollbar for lists */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Gradient background classes */
+.gradient-orange {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #fff8f0 100%);
+}
+
+.gradient-orange-dark {
+  background: linear-gradient(135deg, #cc5529 0%, #ff6b35 50%, #f7931e 100%);
+}
+
+.gradient-orange-light {
+  background: linear-gradient(135deg, #ff8c42 0%, #ffa726 100%);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+}
+
+/* Button micro-interaction */
+.btn-interaction {
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-interaction:active {
+  transform: scale(0.95);
+}
+
+/* Parallax effect container */
+.parallax-container {
+  perspective: 1000px;
+}
+
+.parallax-item {
+  transition: transform 0.3s ease-out;
+}
+
+/* Chili pepper animation */
+.chili-blink {
+  animation: blink 1.5s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* Sticky header shadow */
+.sticky-header-shadow {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading skeleton animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton-loading {
+  background: linear-gradient(to right, #f0f0f0 8%, #e0e0e0 18%, #f0f0f0 33%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+/* Smooth scroll behavior */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}

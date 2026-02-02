@@ -1,0 +1,127 @@
+// Prisma schema for AYAM GEPREK SAMBAL IJO
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// User Model
+model User {
+  userId       String   @id @default(cuid())
+  userIdNum    Int      @unique // 4-digit numeric ID
+  username     String   @unique
+  password     String   // encrypted
+  email        String   @unique
+  phone        String
+  role         String   @default("user") // "user" or "admin"
+  address      String?
+  dateOfBirth  DateTime?
+  points       Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  carts        Cart[]
+  transactions Transaction[]
+}
+
+// Product Model
+model Product {
+  productId     String   @id @default(cuid())
+  name          String
+  description   String
+  image         String
+  price         Int
+  discount      Int      @default(0)
+  category      String   // "food" or "drink"
+  status        String   @default("regular") // "regular", "promo", "new"
+  stock         Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  cartItems     CartItem[]
+  transactionItems TransactionItem[]
+}
+
+// Cart Model
+model Cart {
+  cartId    String     @id @default(cuid())
+  userId    String
+  user      User       @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  items     CartItem[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+// Cart Item Model
+model CartItem {
+  id        String   @id @default(cuid())
+  cartId    String
+  cart      Cart     @relation(fields: [cartId], references: [cartId], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [productId], onDelete: Cascade)
+  quantity  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([cartId, productId])
+}
+
+// Transaction Model
+model Transaction {
+  transactionId    String           @id @default(cuid())
+  transactionIdNum Int              @unique // 4-digit numeric receipt ID
+  userId           String
+  user             User             @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  type             String           // "purchase" or "redeem"
+  status           String           @default("waiting") // "waiting", "processing", "completed", "cancelled"
+  total            Int
+  pointsEarned     Int              @default(0)
+  address          String
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+
+  items            TransactionItem[]
+  redemptionItems  PointRedemptionItem[]
+}
+
+// Transaction Item Model
+model TransactionItem {
+  id             String      @id @default(cuid())
+  transactionId  String
+  transaction    Transaction @relation(fields: [transactionId], references: [transactionId], onDelete: Cascade)
+  productId      String
+  product        Product     @relation(fields: [productId], references: [productId], onDelete: Cascade)
+  quantity       Int
+  price          Int          // price at time of transaction
+}
+
+// Point Redemption Product Model
+model PointProduct {
+  productId    String   @id @default(cuid())
+  name         String
+  description  String
+  image        String
+  pointsRequired Int
+  stock        Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  redemptionItems PointRedemptionItem[]
+}
+
+// Point Redemption Item Model
+model PointRedemptionItem {
+  redemptionId   String         @id @default(cuid())
+  transactionId  String
+  transaction    Transaction   @relation(fields: [transactionId], references: [transactionId], onDelete: Cascade)
+  pointProductId String
+  pointProduct   PointProduct   @relation(fields: [pointProductId], references: [productId], onDelete: Cascade)
+  quantity       Int
+  points         Int            // points at time of redemption
+
+  @@unique([transactionId, pointProductId])
+}
