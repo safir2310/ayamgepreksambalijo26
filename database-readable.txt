@@ -1,0 +1,22 @@
+=== DATABASE EXPORT ====
+
+Exported At: 2026-02-02T15:06:02.084Z
+
+=== USERS ===
+
+ID: 9483 | Username: Safir | Email: musafir2310@gmail.com | Role: admin
+ID: 2832 | Username: User | Email: musafir210@gmail.com | Role: user
+
+=== PRODUCTS ===
+
+Ayam Geprek Sambal Ijo | food | Rp 25,000 | Stock: 50
+Ayam Geprek Sambal Merah | food | Rp 25,000 | Stock: 50
+Ayam Geprek Original | food | Rp 22,000 | Stock: 50
+Nasi Putih | food | Rp 5,000 | Stock: 100
+Es Teh Manis | drink | Rp 5,000 | Stock: 100
+Es Jeruk | drink | Rp 8,000 | Stock: 80
+Ayam Bakar | food | Rp 28,000 | Stock: 40
+Tahu Tempe Goreng | food | Rp 5,000 | Stock: 100
+
+=== TRANSACTIONS ===
+

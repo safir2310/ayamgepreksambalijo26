@@ -1,0 +1,149 @@
+{
+  "exportedAt": "2026-02-02T15:06:02.083Z",
+  "statistics": {
+    "users": 2,
+    "products": 8,
+    "transactions": 0,
+    "pointProducts": 0,
+    "carts": 0
+  },
+  "data": {
+    "users": [
+      {
+        "userId": "cmkzgksoc0000pb7ba1k2qnq9",
+        "userIdNum": 9483,
+        "username": "Safir",
+        "email": "musafir2310@gmail.com",
+        "phone": "085260812758",
+        "role": "admin",
+        "address": null,
+        "dateOfBirth": "2026-01-29T00:00:00.000Z",
+        "points": 0,
+        "createdAt": "2026-01-29T12:56:57.132Z",
+        "updatedAt": "2026-01-29T12:56:57.132Z"
+      },
+      {
+        "userId": "cmkzhrtq50001pb7bwd1rr6bx",
+        "userIdNum": 2832,
+        "username": "User",
+        "email": "musafir210@gmail.com",
+        "phone": "085260812758",
+        "role": "user",
+        "address": "Jawa Teubeng, Kecamatan Pidie, Kabupaten Pidie, 24151",
+        "dateOfBirth": null,
+        "points": 0,
+        "createdAt": "2026-01-29T13:30:24.701Z",
+        "updatedAt": "2026-01-29T13:30:24.701Z"
+      }
+    ],
+    "products": [
+      {
+        "productId": "cmkuiu0p20000o4fxs2jcs713",
+        "name": "Ayam Geprek Sambal Ijo",
+        "description": "Ayam goreng crispy dengan sambal ijo pedas yang bikin nagih. Disajikan dengan nasi putih hangat.",
+        "image": "/products/ayam-geprek-sambal-ijo.png",
+        "price": 25000,
+        "discount": 0,
+        "category": "food",
+        "status": "promo",
+        "stock": 50,
+        "createdAt": "2026-01-26T02:01:15.782Z",
+        "updatedAt": "2026-01-26T02:01:15.782Z"
+      },
+      {
+        "productId": "cmkuiu0p30001o4fx610dz9a5",
+        "name": "Ayam Geprek Sambal Merah",
+        "description": "Ayam goreng crispy dengan sambal merah yang gurih dan pedas. Cocok untuk penggemar sambal.",
+        "image": "/products/ayam-geprek-sambal-merah.png",
+        "price": 25000,
+        "discount": 10,
+        "category": "food",
+        "status": "new",
+        "stock": 50,
+        "createdAt": "2026-01-26T02:01:15.784Z",
+        "updatedAt": "2026-01-26T02:01:15.784Z"
+      },
+      {
+        "productId": "cmkuiu0p40002o4fxtuxbf5wk",
+        "name": "Ayam Geprek Original",
+        "description": "Ayam geprek classic tanpa sambal, porsinya besar dan mengenyangkan.",
+        "image": "/products/ayam-geprek-original.png",
+        "price": 22000,
+        "discount": 0,
+        "category": "food",
+        "status": "regular",
+        "stock": 50,
+        "createdAt": "2026-01-26T02:01:15.784Z",
+        "updatedAt": "2026-01-26T02:01:15.784Z"
+      },
+      {
+        "productId": "cmkuiu0p50003o4fxa9tufgtp",
+        "name": "Nasi Putih",
+        "description": "Nasi putih hangat, cocok untuk menemani menu ayam geprek Anda.",
+        "image": "/products/nasi-putih.png",
+        "price": 5000,
+        "discount": 0,
+        "category": "food",
+        "status": "regular",
+        "stock": 100,
+        "createdAt": "2026-01-26T02:01:15.785Z",
+        "updatedAt": "2026-01-26T02:01:15.785Z"
+      },
+      {
+        "productId": "cmkuiu0p50004o4fxre2i5j9m",
+        "name": "Es Teh Manis",
+        "description": "Es teh manis yang menyegarkan, cocok untuk menghilangkan rasa pedas.",
+        "image": "/products/es-teh-manis.png",
+        "price": 5000,
+        "discount": 0,
+        "category": "drink",
+        "status": "regular",
+        "stock": 100,
+        "createdAt": "2026-01-26T02:01:15.786Z",
+        "updatedAt": "2026-01-26T02:01:15.786Z"
+      },
+      {
+        "productId": "cmkuiu0p60005o4fxkdri5tbx",
+        "name": "Es Jeruk",
+        "description": "Es jeruk segar dengan rasa asam yang pas, sangat menyegarkan.",
+        "image": "/products/es-jeruk.png",
+        "price": 8000,
+        "discount": 0,
+        "category": "drink",
+        "status": "regular",
+        "stock": 80,
+        "createdAt": "2026-01-26T02:01:15.786Z",
+        "updatedAt": "2026-01-26T02:01:15.786Z"
+      },
+      {
+        "productId": "cmkuiu0p70006o4fxwxf83l8x",
+        "name": "Ayam Bakar",
+        "description": "Ayam bakar dengan bumbu kecap manis yang meresap sempurna. Disajikan dengan lalapan.",
+        "image": "/products/ayam-bakar.png",
+        "price": 28000,
+        "discount": 5,
+        "category": "food",
+        "status": "promo",
+        "stock": 40,
+        "createdAt": "2026-01-26T02:01:15.787Z",
+        "updatedAt": "2026-01-26T02:01:15.787Z"
+      },
+      {
+        "productId": "cmkuiu0p70007o4fx0pxsj5td",
+        "name": "Tahu Tempe Goreng",
+        "description": "Gorengan tahu dan tempe yang renyah, cocok sebagai pelengkap menu.",
+        "image": "/products/tahu-tempe-goreng.png",
+        "price": 5000,
+        "discount": 0,
+        "category": "food",
+        "status": "regular",
+        "stock": 100,
+        "createdAt": "2026-01-26T02:01:15.788Z",
+        "updatedAt": "2026-01-26T02:01:15.788Z"
+      }
+    ],
+    "transactions": [],
+    "pointProducts": [],
+    "carts": []
+  }
+}
